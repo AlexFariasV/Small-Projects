@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-width: 100%;
+}
+
+
+.container{
+    background-color: #18cada;
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    
+}
+
+.buttonsForm {
+
+    position: relative;
+    border-radius: 30px;
+    background:linear-gradient(to right, green, yellow );
+    display: flex;
+
+}
+
+.buttonsForm button {
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    position: relative;
+    width: 50%;
+    padding: 10px 0;
+    color: white;
+}
+
+.buttonsForm button#btnBlack {
+    color: #333;
+}
+
+.btnColor {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: red;
+    border-radius: 30px;
+    transition: .3s;
+}
