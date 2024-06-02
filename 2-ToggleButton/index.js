@@ -15,7 +15,7 @@ document.querySelector('#btnBlack').addEventListener('click', () => {
 });
 
 function myFunction() {
-    clickCount++; 
+    clickCount++;
     let body = document.body;
 
     if (clickCount % 2 === 1) {

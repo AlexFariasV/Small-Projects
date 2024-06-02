@@ -3,7 +3,8 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,21 +12,20 @@ body{
     min-width: 100%;
 }
 
-
-.container{
+.container {
     background-color: #18cada;
     max-width: 400px;
     width: 100%;
     padding: 30px;
     border-radius: 10px;
-    
+
 }
 
 .buttonsForm {
 
     position: relative;
     border-radius: 30px;
-    background:linear-gradient(to right, green, yellow );
+    background: linear-gradient(to right, green, yellow);
     display: flex;
 
 }
