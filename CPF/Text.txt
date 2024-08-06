@@ -1,0 +1,4 @@
+Anotações 
+
+->  npm install express ejs mysql2 express-session bcryptjs passport passport-local connect-flash
+

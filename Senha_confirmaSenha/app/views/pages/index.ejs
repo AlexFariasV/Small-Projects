@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Confirma senha</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <section id="caixa_formulario">
+    <form action="" method="" class="form" onsubmit="return verificaConfirmaSenha();">
+
+      <label for="username">Nome de usuário</label>
+      <input type="text" name="username" id="username" required>
+
+      <label for="senha">Senha</label>
+      <input type="password" name="senha" id="senha" size="10" maxlength="6" required>
+
+      <label for="confirmasenha">Confirma senha</label>
+      <input type="password" name="confirmasenha" id="confirmasenha" size="10" maxlength="10" required>
+
+      <button type="submit">Cadastrar</button>
+
+    </form>
+    <p id="mensagem"></p>
+  </section>
+
+  <script>
+    function verificaConfirmaSenha() {
+      let username = document.getElementById('username').value;
+      let senha = document.getElementById('senha').value;
+      let confirmasenha = document.getElementById('confirmasenha').value;
+
+      if (senha === confirmasenha) {
+        document.getElementById("mensagem").innerHTML = `Cadastro realizado com sucesso!<br>Nome de usuário: ${username}<br>Senha: ${senha}`;
+        return false; // Retorna false para evitar o envio do formulário
+      } else {
+        document.getElementById("mensagem").innerHTML = "Confirma Senha está errada!";
+        return false; // Retorna false para evitar o envio do formulário
+      }
+    }
+  </script>
+</body>
+
+</html>

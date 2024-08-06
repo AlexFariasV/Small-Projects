@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CPF</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <section id="caixa_formulario">
+    <form action="" method="" class="form" onsubmit="return false;">
+
+      <label for="username">Nome de usuário</label>
+      <input type="text" name="username" id="username" required>
+
+      <label for="strCPF">CPF</label>
+      <input type="text" name="strCPF" id="strCPF" maxlength="11" required>
+
+      <button type="button" onclick="verificarCPF(document.getElementById('strCPF').value)">Cadastrar</button>
+
+    </form>
+    <p id="mensagem"></p>
+  </section>
+
+  <script>
+    function verificarCPF(valCPF) {
+      valCPF = valCPF.replace(/\D/g, ''); // Remove qualquer caractere que não seja dígito
+
+      if (valCPF.length !== 11 || /^(\d)\1{10}$/.test(valCPF)) {
+        alert("CPF inválido!");
+        return;
+      }
+
+      var soma = 0;
+      var resto;
+
+      // Verifica o primeiro dígito verificador
+      for (var i = 0; i < 9; i++) {
+        soma += parseInt(valCPF.charAt(i)) * (10 - i);
+      }
+      resto = (soma * 10) % 11;
+      if (resto === 10 || resto === 11) resto = 0;
+
+      if (resto !== parseInt(valCPF.charAt(9))) {
+        alert("CPF inválido!");
+        return;
+      }
+
+      // Verifica o segundo dígito verificador
+      soma = 0;
+      for (i = 0; i < 10; i++) {
+        soma += parseInt(valCPF.charAt(i)) * (11 - i);
+      }
+      resto = (soma * 10) % 11;
+      if (resto === 10 || resto === 11) resto = 0;
+
+      if (resto !== parseInt(valCPF.charAt(10))) {
+        alert("CPF inválido!");
+      } else {
+        alert("CPF válido");
+      }
+    }
+  </script>
+</body>
+
+</html>
