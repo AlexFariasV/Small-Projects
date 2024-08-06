@@ -19,9 +19,7 @@ Este repositório contém uma coleção de pequenos projetos de programação qu
 
 Aqui está uma lista dos projetos atualmente disponíveis no repositório:
 
-1. **Foto de Perfil**: Um projeto simples onde você pode adicionar uma foto de perfil ao pressionar um botão. Feito com HTML, CSS e JavaScript.
-2. **Toggle Button**: Um projeto que permite mudar a cor do fundo e das letras de uma página ao pressionar botões. Ao apertar o botão "Black", o fundo fica preto e as letras brancas, e ao apertar o botão "White", o fundo fica branco e as letras pretas. Feito com HTML, CSS e JavaScript.
-3. **Em andamento...**
+1. **Em andamento...**
    
 ## Como Usar
 
