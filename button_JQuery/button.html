@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="hide-show.js"></script>
+</head>
+
+<body>
+    <header>
+        <button>Abrir e Fechar</button>
+        <p>Ao clicar uma vez ele abre e mostra o texto.</p>
+        <p>Ao clicar outra vez ele fecha escondendo o texto.</p>
+    </header>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").toggle(1000);
+            });
+        });
+    </script>
+</body>
+
+</html>
