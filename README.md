@@ -9,7 +9,6 @@ Bem-vindo ao repositório **Small Projects**! Este é o meu espaço para compart
 - [Como Usar](#como-usar)
 - [Contribuição](#contribuição)
 - [Licença](#licença)
-- [Contato](#contato)
 
 ## Descrição
 
@@ -49,12 +48,6 @@ Contribuições são bem-vindas! Se você tiver ideias para novos projetos ou me
 ## Licença
 
 Este repositório está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Contato
-
-Se você tiver alguma dúvida, sugestão ou apenas quiser dizer oi, você pode me encontrar em:
-
-- Email: alexfaria08032006@gmail.com
 
 ---
 ## Obrigado por visitar meu repositório! Espero que você encontre algo útil ou interessante aqui.
