@@ -374,22 +374,27 @@
         var confirmBack = document.getElementById("confirmBack");
         var cancelBack = document.getElementById("cancelBack");
         var publishBtn = document.getElementById("publishBtn");
-
+        var descricao = document.getElementById("descricao");
+        var endereco = document.getElementById("endereco");
+        var descricaoError = document.getElementById("descricaoError");
+        var enderecoError = document.getElementById("enderecoError");
+    
         function disableNextButton() {
             nextBtn.classList.remove("active");
             nextBtn.style.backgroundColor = "black";
             nextBtn.style.cursor = "not-allowed";
         }
-
+    
         openBtn.onclick = function () {
             modal.style.display = "flex";
             disableNextButton();
         }
-
+    
         closeBtn.onclick = function () {
             modal.style.display = "none";
+            resetModals(); // Reseta os modais ao fechar
         }
-
+    
         imageInput.onchange = function (event) {
             var file = event.target.files[0];
             if (file) {
@@ -409,7 +414,7 @@
                 reader.readAsDataURL(file);
             }
         }
-
+    
         concluidoBtn.onclick = function () {
             nextBtn.classList.add("active");
             nextBtn.style.cursor = "pointer";
@@ -419,63 +424,80 @@
             concluidoBtn.classList.add("disabled");
             concluidoBtn.style.cursor = "not-allowed";
         }
-
+    
         nextBtn.onclick = function () {
             if (nextBtn.classList.contains("active")) {
                 modal.style.display = "none";
                 modalContinua.style.display = "flex";
             }
         }
-
+    
         backBtn.onclick = function () {
             confirmModal.style.display = "flex";
         }
-
+    
         confirmBack.onclick = function () {
             modalContinua.style.display = "none";
             modal.style.display = "flex";
             confirmModal.style.display = "none";
         }
-
+    
         cancelBack.onclick = function () {
             confirmModal.style.display = "none";
         }
-
+    
         publishBtn.onclick = function () {
-            var descricao = document.getElementById("descricao");
-            var endereco = document.getElementById("endereco");
-            var descricaoError = document.getElementById("descricaoError");
-            var enderecoError = document.getElementById("enderecoError");
-
             var isValid = true;
-
+    
             descricao.classList.remove("error");
             endereco.classList.remove("error");
             descricaoError.style.display = "none";
             enderecoError.style.display = "none";
-
+    
             if (descricao.value.trim() === "") {
                 descricao.classList.add("error");
                 descricaoError.style.display = "block";
                 isValid = false;
             }
-
+    
             if (endereco.value.trim() === "") {
                 endereco.classList.add("error");
                 enderecoError.style.display = "block";
                 isValid = false;
             }
-
+    
             if (isValid) {
-                loadingModal.style.display = "flex";
-
+                loadingModal.style.display = "flex"; // Exibe o modal de carregamento
+    
                 setTimeout(function () {
-                    loadingModal.style.display = "none";
-                    modalContinua.style.display = "none";
-                }, 6000);
+                    loadingModal.style.display = "none"; // Esconde o modal de carregamento
+                    modalContinua.style.display = "none"; // Fecha o modal de continuação
+                    resetModals(); // Reseta os modais após publicar
+                }, 6000); // Simula um delay de 6 segundos
             }
         }
+    
+        // Função para limpar os campos
+        function resetModals() {
+            // Limpar campos do primeiro modal
+            imageInput.value = ""; // Limpa o input de imagem
+            imagePreview.src = ""; // Limpa a pré-visualização
+            imagePreview.style.display = "none"; // Esconde a imagem
+            concluidoBtn.style.display = "none"; // Esconde o botão "Concluído"
+            concluidoBtn.classList.remove("disabled"); // Remove a classe de desabilitado
+            concluidoBtn.style.cursor = "pointer"; // Reseta o cursor
+            nextBtn.classList.remove("active"); // Remove a classe do botão "Próximo"
+            nextBtn.style.backgroundColor = "black"; // Reseta a cor do botão "Próximo"
+            nextBtn.style.cursor = "not-allowed"; // Reseta o cursor do botão "Próximo"
+    
+            // Limpar campos do segundo modal
+            descricao.value = ""; // Limpa o textarea
+            endereco.value = ""; // Limpa o input de endereço
+            imagePreviewContinua.src = ""; // Limpa a pré-visualização no segundo modal
+            imagePreviewContinua.style.display = "none"; // Esconde a imagem no segundo modal
+        }
     </script>
+    
 
 </body>
 
